@@ -1,10 +1,15 @@
 import { getWeatherInfo } from './query-weather-data';
+import { updateWeatherUi } from './update-weather-ui';
 
 const getClientCoordinates = (position) => {
 	let latitude = position.coords.latitude;
 	let longitude = position.coords.longitude;
 
-	getWeatherInfo(latitude + ', ' + longitude);
+	updateWeatherUi(
+		{ type: 'DOMContentLoaded' },
+		latitude + ', ' + longitude,
+		undefined,
+	);
 };
 
 const getClientLocation = () => {

@@ -1,4 +1,3 @@
-import { getWeatherInfo } from './query-weather-data';
 import { updateWeatherUi } from './update-weather-ui';
 
 const getClientCoordinates = (position) => {
@@ -13,14 +12,11 @@ const getClientCoordinates = (position) => {
 };
 
 const getClientLocation = () => {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(
-			getClientCoordinates,
-			getWeatherInfo,
-		);
-	} else {
-		getWeatherInfo();
-	}
+	navigator.geolocation
+		? navigator.geolocation.getCurrentPosition(getClientCoordinates, () => {
+				updateWeatherUi({ type: 'DOMContentLoaded' }, undefined, undefined);
+			})
+		: updateWeatherUi({ type: 'DOMContentLoaded' }, undefined, undefined);
 };
 
 export { getClientLocation };

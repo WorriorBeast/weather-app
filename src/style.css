@@ -6,6 +6,8 @@
 	--search-bar-height: 30px;
 	--search-bar-max-width: 50vw;
 	--transition-duration: 1.5s;
+	--icon-hover-color: #0262ff;
+	--toggle-forecast-btn-height: 40px;
 }
 
 body {
@@ -169,4 +171,31 @@ button[type='submit'] {
 	border-radius: 50%;
 	filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(221deg) brightness(93%)
 		contrast(81%);
+}
+
+#content > .toggle-weather-report {
+	height: var(--toggle-forecast-btn-height);
+	width: 25px;
+	border: none;
+	background: transparent;
+	padding: 0;
+	border-radius: 0 10px 10px 0;
+	position: absolute;
+	right: -25px;
+	top: calc(50% + calc(var(--toggle-forecast-btn-height) * -1));
+	cursor: pointer;
+}
+
+#content > .toggle-weather-report > svg {
+	fill: white;
+	background-color: transparent;
+	transform: rotate(90deg);
+}
+
+#content.slide-in > .toggle-weather-report > svg {
+	transform: rotate(-90deg);
+}
+
+#content .toggle-weather-report:hover svg path {
+	fill: var(--icon-hover-color);
 }

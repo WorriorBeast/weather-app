@@ -6,6 +6,8 @@ function toggleSlideIn() {
 		this.closest('.search-bar-container').classList.toggle('slide-in');
 		return;
 	}
+
+	this.closest('#content').classList.toggle('slide-in');
 }
 
 export { toggleSlideIn };

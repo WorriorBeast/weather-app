@@ -15,6 +15,7 @@
 						name="location"
 						id="location"
 						placeholder="Enter city,state or latitude,longitude or zip code"
+						required
 					/>
 				</div>
 				<div class="dynamic-period">
@@ -41,5 +42,28 @@
 				</button>
 			</form>
 		</header>
+		<div id="content">
+			<div class="quick-overview">
+				<div class="current-weather"></div>
+				<img />
+				<div class="forecast-container">
+					<table id="forecast-table">
+						<caption class="forecast-caption"></caption>
+						<thead class="days"></thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+			<div class="weather-report-container">
+				<table id="weather-report-table"></table>
+			</div>
+			<button type="button" class="toggle-weather-report">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path
+						d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"
+					/>
+				</svg>
+			</button>
+		</div>
 	</body>
 </html>

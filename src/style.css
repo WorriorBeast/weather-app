@@ -5,6 +5,7 @@
 	--light-gray: #d1d1d1;
 	--search-bar-height: 30px;
 	--search-bar-max-width: 50vw;
+	--transition-duration: 1.5s;
 }
 
 body {
@@ -95,4 +96,77 @@ button[type='submit'] {
 
 .search-bar-container.slide-in:hover .city-state-zip {
 	border-right: 0.5px solid var(--dark-gray);
+}
+
+#content {
+	color: white;
+	width: 60vw;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+	transition: width var(--transition-duration);
+}
+
+#content.slide-in {
+	width: 92vw;
+}
+
+.quick-overview {
+	width: 100%;
+	display: grid;
+	grid-template-areas:
+		'current-weather icon'
+		'forecast forecast';
+	grid-template-rows: 1.6fr 1fr;
+	grid-template-columns: 2fr 1fr;
+	color: var(--dark-gray);
+	transition: width var(--transition-duration);
+	background-color: black;
+	z-index: 1;
+}
+
+#content.slide-in .quick-overview {
+	width: 50%;
+}
+
+.current-weather {
+	grid-area: current-weather;
+	line-height: 1.6;
+}
+
+.location {
+	font-size: 1.5rem;
+	font-weight: normal;
+	margin: 25px 0 0;
+}
+
+.temperature {
+	font-size: 3rem;
+	color: var(--light-gray);
+}
+
+.low-high-temp,
+.feels-like {
+	margin: 0 0 10px 0;
+}
+
+.current-description {
+	margin: 0;
+}
+
+.quick-overview > img[src$='.svg'] {
+	align-self: center;
+	padding: 0px;
+	margin-right: 10px;
+	max-width: 250px;
+	justify-self: center;
+	filter: drop-shadow(0px 0px 90px var(--light-gray));
+}
+
+.quick-overview > img[alt='fog'] {
+	box-shadow: 0px 0px 20px 20px #f0f0f0;
+	background: #f0f0f0;
+	border-radius: 50%;
+	filter: invert(96%) sepia(0%) saturate(0%) hue-rotate(221deg) brightness(93%)
+		contrast(81%);
 }

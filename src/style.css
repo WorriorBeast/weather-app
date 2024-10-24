@@ -100,6 +100,26 @@ button[type='submit'] {
 	border-right: 0.5px solid var(--dark-gray);
 }
 
+#error-msg {
+	color: red;
+	margin: -10px 0 0;
+	text-align: center;
+}
+
+.error #location:focus {
+	outline-color: red;
+	border: none;
+	height: 100%;
+	margin: 0;
+}
+
+.error #location {
+	border-color: #b60000;
+	border-style: solid;
+	margin: -1px 0 0 -1px;
+	height: calc(var(--search-bar-height) + 2px);
+}
+
 #content {
 	color: white;
 	width: 60vw;

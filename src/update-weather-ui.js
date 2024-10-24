@@ -4,8 +4,10 @@ import { classMethodIterator } from './class-method-iterator';
 import { removeAllChildren } from './remove-all-children';
 import { weatherIcons } from './weather-icons';
 import { Forecast } from './forecast';
+import { WeatherReport } from './weather-report';
 
 const searchBar = document.getElementById('search-bar');
+const tableReport = document.getElementById('weather-report-table');
 
 async function updateWeatherUi(e, locationInput, periodInput) {
 	const currentWeatherContainer = document.querySelector('.current-weather');
@@ -18,7 +20,12 @@ async function updateWeatherUi(e, locationInput, periodInput) {
 
 	const forecastData = await getWeatherInfo(locationInput, periodInput);
 
-	const parents = [currentWeatherContainer, forecastTHead, forecastTBody];
+	const parents = [
+		currentWeatherContainer,
+		forecastTHead,
+		forecastTBody,
+		tableReport,
+	];
 
 	const updateWeatherUi = [
 		new QuickOverview(
@@ -34,6 +41,7 @@ async function updateWeatherUi(e, locationInput, periodInput) {
 			weatherIcons,
 			forecastTBody,
 		),
+		new WeatherReport(forecastData, tableReport),
 	];
 
 	removeAllChildren(parents);

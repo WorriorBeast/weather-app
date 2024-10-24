@@ -200,8 +200,6 @@ button[type='submit'] {
 	fill: var(--icon-hover-color);
 }
 
-/* forecast starts here */
-
 .forecast-container {
 	grid-area: forecast;
 	overflow-x: auto;
@@ -279,4 +277,58 @@ button[type='submit'] {
 
 .high-temp {
 	width: auto;
+}
+
+.weather-report-container {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	overflow: hidden;
+	max-width: 100%;
+	scrollbar-color: white black;
+	transition:
+		width var(--transition-duration),
+		left var(--transition-duration);
+}
+
+#content.slide-in .weather-report-container {
+	width: 50%;
+	left: 50%;
+	max-height: 85vh;
+	overflow: auto;
+}
+
+#weather-report-table {
+	border-spacing: 0;
+}
+
+.breakdown-caption {
+	text-align: -webkit-left;
+	font-size: 1.5rem;
+	margin: 25px 0 10px;
+	color: var(--light-gray);
+}
+
+.data-elements {
+	position: relative;
+}
+
+.data-elements th {
+	position: sticky;
+	top: 0;
+	color: #39b3ff;
+	padding: 8px 5px;
+	min-width: 80px;
+	background: black;
+}
+
+.weather-data td {
+	padding: 8px;
+	text-align: center;
+	color: var(--light-gray);
+}
+
+.weather-data tr:hover td {
+	background-color: #022237;
 }

@@ -5,6 +5,7 @@ import { removeAllChildren } from './remove-all-children';
 import { weatherIcons } from './weather-icons';
 import { Forecast } from './forecast';
 import { WeatherReport } from './weather-report';
+import { closeLoadingScreen } from './loading-screen';
 
 const searchBar = document.getElementById('search-bar');
 const tableReport = document.getElementById('weather-report-table');
@@ -45,8 +46,8 @@ async function updateWeatherUi(e, locationInput, periodInput) {
 	];
 
 	removeAllChildren(parents);
-
 	classMethodIterator(updateWeatherUi);
+	closeLoadingScreen();
 
 	searchBar.reset();
 }

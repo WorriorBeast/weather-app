@@ -85,7 +85,7 @@ const animateLoadingScreen = () => {
 
 	const startAnimation = () => {
 		if (startAnimationDelay == 0) {
-			const testing = setTimeout(() => {
+			const id = setTimeout(() => {
 				startAnimationDelay = 4000;
 				upCurrentIndex = 0;
 				downCurrentIndex = 0;
@@ -98,13 +98,13 @@ const animateLoadingScreen = () => {
 				startAnimation();
 
 				if (!dialog.open) {
-					clearInterval(testing);
+					clearInterval(id);
 				}
 
-				clearInterval(testing);
+				clearInterval(id);
 			}, startAnimationDelay);
 		} else {
-			const testing = setInterval(() => {
+			const id = setInterval(() => {
 				upCurrentIndex = 0;
 				downCurrentIndex = 0;
 				upDelay = 0;
@@ -114,7 +114,7 @@ const animateLoadingScreen = () => {
 				animateDown();
 
 				if (!dialog.open) {
-					clearInterval(testing);
+					clearInterval(id);
 					startAnimationDelay = 0;
 				}
 			}, startAnimationDelay);

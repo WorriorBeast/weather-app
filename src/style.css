@@ -120,6 +120,92 @@ button[type='submit'] {
 	height: calc(var(--search-bar-height) + 2px);
 }
 
+#alert {
+	position: fixed;
+	top: 10px;
+	right: 40px;
+	color: red;
+	background-color: black;
+	padding: 6px 13px;
+	border-radius: 20px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	border: none;
+	z-index: 1;
+}
+
+#alert:hover {
+	border: 1px solid red;
+}
+
+#alert-container {
+	display: none;
+	height: calc(90vh - var(--search-bar-height));
+	width: 95vw;
+	color: black;
+	background-color: #ffc8c8;
+	border: 3px solid red;
+	border-radius: 30px;
+	margin: 4vh auto 0;
+	padding: 0 20px;
+	box-sizing: border-box;
+	position: relative;
+	line-height: 1.6;
+}
+
+#alert-container.view-alert {
+	display: block;
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+	scrollbar-color: #bbbbbb transparent;
+}
+
+#content.hide-content {
+	display: none;
+}
+
+#close-alert {
+	height: 30px;
+	width: 30px;
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	cursor: pointer;
+}
+
+#close-alert:hover svg {
+	fill: red;
+}
+
+.no-alert-msg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	font-size: 2rem;
+	margin: 0;
+}
+
+#alert-container h1 {
+	margin: 15px 0 0;
+}
+
+#alert-container h2 {
+	font-size: 1.2rem;
+}
+
+#alert-container div {
+	font-weight: bold;
+}
+
+#alert-container p:not([class='no-alert-msg']) {
+	font-weight: normal;
+	margin-top: 10px;
+}
+
 #content {
 	color: white;
 	width: 60vw;
